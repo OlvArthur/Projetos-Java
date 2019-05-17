@@ -1,0 +1,85 @@
+package studentDatabaseApp;
+
+import java.util.Scanner;
+
+public class Student {
+	private String firstName;
+	private String lastName;
+	private String gradeYear;
+	private String gradeLevel;
+	private String studentId;
+	private String courses;
+	private int tuitionBalance = 0;
+	private static int costOfCourse = 600;
+	private static int id = 1000;
+
+	// Constructor; prompt user to enter student's name and year
+	public Student() {
+		Scanner in = new Scanner(System.in);
+		System.out.print("Enter student first name: ");
+		this.firstName = in.nextLine();
+
+		System.out.print("Enter student last name: ");
+		this.lastName = in.nextLine();
+
+		System.out.println("\n1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter student class level: ");
+		this.gradeLevel = in.nextLine();
+		switch (gradeLevel) {
+		
+		case "1":
+			gradeYear = "Freshmen year";
+			break;
+		case "2":
+			gradeYear = "Sophmore year";
+			break;
+		case "3":
+			gradeYear = "Junior year";
+			break;
+		case "4":
+			gradeYear = "Senior year";
+			break;
+		default: 
+			System.out.println("Invalid");	
+
+		}
+		
+		setStudentId();
+
+		System.out.println(firstName + " " + lastName + ": " + gradeYear + "\nID: " + studentId);
+		
+		enroll();
+		
+		showBalance();
+		
+		
+	}
+
+	// Generate an ID
+	private void setStudentId() {
+		id++;
+		this.studentId = gradeLevel + "" + id;
+	}
+
+	// Enroll in courses
+	public void enroll() {
+		
+		System.out.println("Enter the course to enroll (Q to quit): ");
+		Scanner in = new Scanner(System.in);
+		String course = in.nextLine().toUpperCase();
+		if(course != "Q") {
+			courses = courses + "\n" + course;
+			tuitionBalance = tuitionBalance + costOfCourse;
+		}
+		System.out.println("Enrolled in: " + courses);
+	}
+
+	// View Balance
+	private int showBalance() {
+		return tuitionBalance;
+	}
+
+	// Pay tuition
+
+	// Show status
+
+}
