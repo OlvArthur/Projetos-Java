@@ -71,7 +71,6 @@ public class TreeSort {
 		
 		case "1500":
 			numElementos = 1500;
-			break;
 			
 		case "100000":
 			numElementos = 100000;
