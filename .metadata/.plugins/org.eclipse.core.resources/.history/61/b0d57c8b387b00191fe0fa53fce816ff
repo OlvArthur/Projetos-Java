@@ -61,20 +61,20 @@ public class TreeSort {
 
 	public static void main(String[] args) {
 		int numElementos = 0;
-		System.out.println("100\n100000\n500000\nQuantidade de elementos desejada:");
+		System.out.println("10\n1500\n100000\nQuantidade de elementos desejada:");
 		Scanner in = new Scanner(System.in);
 		switch(in.nextLine()) {
 		
-		case "100":
-			numElementos = 100;
+		case "10":
+			numElementos = 10;
 			break;
 		
-		case "100000":
-			numElementos = 100000;
+		case "1500":
+			numElementos = 1500;
 			break;
 			
-		case "500000":
-			numElementos = 500000;
+		case "100000":
+			numElementos = 100000;
 			break;
 		
 		default:

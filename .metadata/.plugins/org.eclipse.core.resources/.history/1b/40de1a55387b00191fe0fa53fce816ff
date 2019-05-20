@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class Tree {
 	
 	
+	//public Tree() {
+		//System.out.println("Quantidade de elementos desejados: ");
+		//System.out.print("Enter student last name: ");
+		//Scanner in = new Scanner(System.in);
+	
 	
 		Node node;
 		Tree(int value){
@@ -14,13 +19,13 @@ public class Tree {
 			if(node == null){
 				return new Node(value);
 			}
-			// Move para a esquerda se o valor
-			// passado é menor que o atual nó
+			// Move to the left if passed value is 
+			// less than the current node
 			if(value < node.value){
 				node.left = insert(node.left, value);
 			}
-			// Move para a direita se o valor 
-			// passado é maior que o atual nó
+			// Move to the right if passed value is 
+			// greater than the current node
 			else if(value > node.value){
 				node.right = insert(node.right, value);
 			}
